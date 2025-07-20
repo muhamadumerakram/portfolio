@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme setup
     let theme = localStorage.getItem('theme');
     if (!theme) {
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        theme = 'dark'; // Always default to dark mode
     }
     setTheme(theme);
     const themeToggle = document.getElementById('theme-toggle');
@@ -64,6 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('Theme toggle button not found!');
     }
+
+    // Remove neon border effect in light mode
+    function updateNeonEffect() {
+        if (document.documentElement.getAttribute('data-theme') === 'light') {
+            document.body.classList.add('no-neon');
+        } else {
+            document.body.classList.remove('no-neon');
+        }
+    }
+    updateNeonEffect();
+    // Also update on theme change
+    const originalSetTheme = setTheme;
+    setTheme = function(theme) {
+        originalSetTheme(theme);
+        updateNeonEffect();
+    };
 });
 
 // Smooth scroll handling

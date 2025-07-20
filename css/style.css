@@ -873,6 +873,16 @@ nav, footer, .tech-card-glow, .bg-dark\/50, .bg-secondary\/50 {
     transition: background 0.5s, color 0.5s, box-shadow 0.5s;
 }
 
+body.no-neon #theme-toggle,
+body.no-neon .tech-card-glow,
+body.no-neon .bg-dark\/50,
+body.no-neon .bg-secondary\/50,
+body.no-neon nav {
+  box-shadow: none !important;
+  border-color: #e5e7eb !important;
+  border-width: 1px !important;
+}
+
 .skill-bar {
   height: 20px;
   min-height: 20px;
