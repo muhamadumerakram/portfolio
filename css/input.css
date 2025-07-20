@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark text-light font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl font-bold mb-8 text-center text-primary;
+  }
+  
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-primary/20 text-primary;
+  }
+  
+  .skill-bar {
+    @apply h-2 rounded-full bg-primary/20 overflow-hidden;
+  }
+  
+  .skill-progress {
+    @apply h-full bg-primary rounded-full transition-all duration-1000;
+  }
+  
+  .project-card {
+    @apply p-6 rounded-lg bg-secondary border border-primary/20 hover:border-primary transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply text-light/70 hover:text-primary transition-colors duration-300;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all duration-300;
+  }
+  
+  .code-block {
+    @apply bg-secondary p-4 rounded-lg font-mono text-sm overflow-x-auto;
+  }
+}

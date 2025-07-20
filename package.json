@@ -1,0 +1,11 @@
+{
+  "name": "umer-portfolio",
+  "version": "1.0.0",
+  "description": "Muhammad Umer Akram's Portfolio",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

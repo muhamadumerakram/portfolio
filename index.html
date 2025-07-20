@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Umer Akram - QA Engineer & Test Automation Specialist</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Highlight.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0891b2',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .skill-bar { @apply h-2 rounded-full bg-primary/20 overflow-hidden; }
+        .skill-progress { @apply h-full bg-primary rounded-full transition-all duration-1000; }
+        
+        /* Animation utilities */
+        .fade-in { opacity: 0; animation: fadeIn 0.8s ease-in forwards; }
+        .slide-up { opacity: 0; transform: translateY(20px); animation: slideUp 0.8s ease-out forwards; }
+        .scale-in { opacity: 0; transform: scale(0.95); animation: scaleIn 0.5s ease-out forwards; }
+        .rotate-in { opacity: 0; transform: rotate(-10deg); animation: rotateIn 0.6s ease-out forwards; }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes rotateIn {
+            to { opacity: 1; transform: rotate(0); }
+        }
+        
+        /* Hover animations */
+        .hover-lift { transition: transform 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); }
+        
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+        
+        .hover-rotate { transition: transform 0.3s ease; }
+        .hover-rotate:hover { transform: rotate(5deg); }
+        
+        /* Stagger children animations */
+        .stagger > * {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .stagger > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Button animations */
+        @keyframes particle1 {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-100%, -100%) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes particle2 {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100%, -100%) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .animate-particle1 {
+            animation: particle1 0.8s ease-out infinite;
+        }
+
+        .animate-particle2 {
+            animation: particle2 0.8s ease-out infinite;
+        }
+
+        /* Button animation keyframes */
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .5;
+            }
+        }
+
+        @keyframes particle1 {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(-20px, -20px) scale(0); opacity: 0; }
+        }
+
+        @keyframes particle2 {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(20px, -20px) scale(0); opacity: 0; }
+        }
+
+        .animate-ping {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .animate-particle1 {
+            animation: particle1 1s ease-out infinite;
+        }
+
+        .animate-particle2 {
+            animation: particle2 1s ease-out infinite;
+        }
+
+        /* New animation classes */
+        .tech-nav-animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .tech-glow {
+            text-shadow: 0 0 10px rgba(8, 145, 178, 0.5);
+        }
+
+        .tech-underline {
+            position: relative;
+        }
+
+        .tech-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #0891b2;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .tech-underline:hover::after {
+            width: 100%;
+        }
+
+        .tech-btn-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(8, 145, 178, 0.3) 0%, rgba(8, 145, 178, 0) 70%);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            opacity: 0;
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .tech-btn-glow:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .tech-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .tech-ripple:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .tech-skill-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-skill-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #0891b2, #0891b2 50%, #1e293b 50%, #1e293b);
+            z-index: -1;
+            opacity: 0.1;
+            transform: skewX(-10deg);
+        }
+
+        .tech-card-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(8, 145, 178, 0.1) 0%, rgba(8, 145, 178, 0) 70%);
+            border-radius: 10px;
+            opacity: 0;
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .tech-card-glow:hover::before {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .tech-bg-animate {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-bg-animate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            opacity: 0.1;
+            z-index: -1;
+            animation: bg-animation 20s infinite linear;
+        }
+
+        @keyframes bg-animation {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(10%, 10%); }
+            50% { transform: translate(20%, -10%); }
+            75% { transform: translate(-10%, 20%); }
+            100% { transform: translate(0, 0); }
+        }
+        html[data-theme="dark"] body { background: #000 !important; color: #f8fafc !important; }
+        html[data-theme="light"] body { background: #f8fafc !important; color: #0f172a !important; }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Animated SVG Blob Background -->
+    <div id="bg-blob" aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none select-none">
+        <svg width="100%" height="100%" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <defs>
+                <radialGradient id="blobGradient" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
+                    <stop offset="0%" stop-color="#00fff7" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#0891b2" stop-opacity="0.2"/>
+                </radialGradient>
+            </defs>
+            <g>
+                <animateTransform attributeName="transform" type="translate" values="0 0; 40 20; 0 0" dur="12s" repeatCount="indefinite"/>
+                <path fill="url(#blobGradient)" fill-opacity="0.7">
+                    <animate attributeName="d" dur="12s" repeatCount="indefinite"
+                        values="M0,0 Q720,200 1440,0 Q1300,450 1440,900 Q720,700 0,900 Q200,450 0,0Z;
+                                M0,0 Q720,300 1440,0 Q1300,600 1440,900 Q720,800 0,900 Q200,600 0,0Z;
+                                M0,0 Q720,200 1440,0 Q1300,450 1440,900 Q720,700 0,900 Q200,450 0,0Z"/>
+                </path>
+            </g>
+        </svg>
+    </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark/95 backdrop-blur-md z-50 border-b border-primary/10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-primary font-mono text-xl font-bold" style="color: #00fff7;">MUA</a>
+                    <!-- Light/Dark Mode Toggle Button in Nav -->
+                    <button id="theme-toggle" class="ml-2 bg-white/80 dark:bg-dark/80 border border-primary rounded-full shadow-lg p-2 flex items-center justify-center transition-colors duration-300 hover:scale-110" aria-label="Toggle light/dark mode">
+                        <span id="theme-icon" class="text-primary text-xl">
+                            <i class="fas fa-moon"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-light/70 hover:text-primary transition-colors">About</a>
+                    <a href="#experience" class="text-light/70 hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects" class="text-light/70 hover:text-primary transition-colors">Projects</a>
+                    <a href="#framework" class="text-light/70 hover:text-primary transition-colors">Framework</a>
+                    <a href="#contact" class="text-light/70 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-light/70 hover:text-primary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen bg-dark flex items-center border-b border-primary/10">
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="w-48 h-48 mx-auto mb-8 rounded-full border-4 border-primary/20 overflow-hidden scale-in">
+                    <img src="img/Photo.jpg" alt="Muhammad Umer Akram" class="w-full h-full object-cover hover-scale">
+                </div>
+                <h1 class="text-5xl md:text-6xl font-mono font-bold text-light mb-4 slide-up" style="animation-delay: 0.2s;">
+                    Muhammad Umer Akram
+                </h1>
+                <h2 class="text-xl md:text-2xl text-primary font-mono mb-6 slide-up" style="animation-delay: 0.4s;">
+                    Quality Assurance Engineer | Test Automation Specialist
+                </h2>
+                <p class="text-light/70 text-lg mb-8 max-w-2xl mx-auto fade-in" style="animation-delay: 0.6s;">
+                    Ensuring software excellence through innovative testing strategies and automation frameworks. 
+                    2+ years of experience delivering quality solutions.
+                </p>
+                <div class="flex justify-center gap-4 fade-in" style="animation-delay: 0.8s;">
+                    <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                        Contact Me
+                    </a>
+                    <a href="documents/(Umer Akram)SQA Engineer Resume.pdf" download class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all duration-300 group">
+                        <span class="flex items-center gap-2">
+                            Download Resume
+                            <i class="fas fa-download group-hover:translate-y-0.5 transition-transform"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-mono text-light mb-4">Professional Summary</h3>
+                    <p class="text-light/70 leading-relaxed">
+                        I'm a dedicated Software Quality Assurance Engineer with 2+ years of experience at MailMunch, specializing in test automation, API testing, and comprehensive QA processes. My analytical mindset and attention to detail drive me to ensure software excellence in every project.
+                    </p>
+                    <p class="text-light/70 leading-relaxed">
+                        Based in Lahore, Punjab, Pakistan, I hold a BS in Computer Science from MNS University of Agriculture, Multan. I'm passionate about transforming manual testing processes into efficient automated solutions that deliver measurable business impact.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Analytical</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Detail-Oriented</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Collaborative</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Problem Solver</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dotlottie-wc src="https://lottie.host/23be15c4-35d1-4fda-b072-318097ec9308/waeTUrYg3g.lottie" style="width: 300px; height: 300px;" speed="1" autoplay loop></dotlottie-wc>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Skills & Expertise</h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="fade-in" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-mono text-light mb-6">Testing Types</h3>
+                    <div class="space-y-6 stagger">
+                        <div class="space-y-2 hover-lift">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">Manual Testing</span>
+                                <span class="text-primary">95%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">Automation Testing</span>
+                                <span class="text-primary">70%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">API Testing</span>
+                                <span class="text-primary">60%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">Mobile Testing</span>
+                                <span class="text-primary">70%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-mono text-light mb-6">Tools & Technologies</h3>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">Cypress</span>
+                                <span class="text-primary">80%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">Postman</span>
+                                <span class="text-primary">60%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">JIRA</span>
+                                <span class="text-primary">88%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-light">MySQL</span>
+                                <span class="text-primary">60%</span>
+                            </div>
+                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Professional Experience</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-8" data-animate="scale-in">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h3 class="text-2xl font-mono text-light">Software Quality Assurance Engineer</h3>
+                            <p class="text-primary mt-2">MailMunch</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="text-light/70">December 2022 - Present</span>
+                            <span class="ml-3 text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">Current Role</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-mono text-light mb-3">Key Responsibilities:</h4>
+                            <ul class="list-disc list-inside text-light/70 space-y-2">
+                                <li>Developed comprehensive test automation frameworks</li>
+                                <li>Conducted thorough API testing using Postman</li>
+                                <li>Implemented CI/CD testing with GitHub Actions</li>
+                                <li>Managed bug tracking and reporting in JIRA</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-mono text-light mb-3">Technologies Used:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Cypress</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Postman</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JIRA</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">MySQL</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">GitHub Actions</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Confluence</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-mono text-light mb-3">Key Achievements:</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-dark/50 p-4 rounded-lg border border-primary/10">
+                                    <p class="text-2xl font-mono text-primary mb-1">95%</p>
+                                    <p class="text-light/70">Bug Detection Rate</p>
+                                </div>
+                                <div class="bg-dark/50 p-4 rounded-lg border border-primary/10">
+                                    <p class="text-2xl font-mono text-primary mb-1">70%</p>
+                                    <p class="text-light/70">Reduced Testing Time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Projects Showcase</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger">
+                <!-- MailMunch Platform -->
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300" data-animate="scale-in">
+                    <h3 class="text-2xl font-mono text-light mb-2 slide-up">MailMunch Platform</h3>
+                    <p class="text-primary mb-4 fade-in" style="animation-delay: 0.2s;">Web Testing</p>
+                    <p class="text-light/70 mb-6">
+                        End-to-end testing of email marketing platform including form builders, email campaigns, and analytics dashboard with automated testing frameworks.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-mono text-light mb-3">Testing Approaches:</h4>
+                        <ul class="list-disc list-inside text-light/70 space-y-2">
+                            <li>Automated E2E testing with Cypress</li>
+                            <li>API testing with Postman collections</li>
+                            <li>Cross-browser compatibility testing</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Cypress</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">API Testing</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Automation</span>
+                    </div>
+                </div>
+
+                <!-- Shopbae Mobile App -->
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
+                    <h3 class="text-2xl font-mono text-light mb-2">Shopbae Mobile App</h3>
+                    <p class="text-primary mb-4">Mobile Testing</p>
+                    <p class="text-light/70 mb-6">
+                        Comprehensive mobile application testing for e-commerce platform focusing on payment integration, user flows, and performance across various mobile devices.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-mono text-light mb-3">Testing Approaches:</h4>
+                        <ul class="list-disc list-inside text-light/70 space-y-2">
+                            <li>Device compatibility testing</li>
+                            <li>Payment gateway integration testing</li>
+                            <li>User journey and usability testing</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Mobile</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">TestFlight</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">E-commerce</span>
+                    </div>
+                </div>
+
+                <!-- Farm Data Analytical System -->
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
+                    <h3 class="text-2xl font-mono text-light mb-2">Farm Data Analytical System</h3>
+                    <p class="text-primary mb-4">Android Testing</p>
+                    <p class="text-light/70 mb-6">
+                        Comprehensive testing of agricultural data management system focusing on data accuracy, user experience, and performance optimization across Android devices.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-mono text-light mb-3">Testing Approaches:</h4>
+                        <ul class="list-disc list-inside text-light/70 space-y-2">
+                            <li>Functional testing across multiple Android versions</li>
+                            <li>Performance testing with large datasets</li>
+                            <li>UI/UX validation and accessibility testing</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Android</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Manual Testing</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Framework Section -->
+    <section id="framework" class="py-20 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Automation Framework</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-8 flex flex-col md:flex-row items-center gap-8" data-animate="scale-in">
+                    <div class="flex-1">
+                    <h3 class="text-2xl font-mono text-light mb-6">Cypress Test Framework</h3>
+                    <p class="text-light/70 mb-8">
+                        Built a comprehensive test automation framework using Cypress with Page Object Model (POM) architecture, 
+                        integrated with GitHub Actions for continuous testing and AWS for detailed reporting.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span class="text-light">20+ Test Suites</span>
+                            </div>
+                            <p class="text-light/70 text-sm">covering critical user journeys</p>
+                        </div>
+                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span class="text-light">100+ Automated Test Cases</span>
+                            </div>
+                            <p class="text-light/70 text-sm">with POM architecture</p>
+                        </div>
+                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span class="text-light">GitHub Actions CI/CD</span>
+                            </div>
+                            <p class="text-light/70 text-sm">pipeline integration</p>
+                        </div>
+                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span class="text-light">AWS Integration</span>
+                            </div>
+                            <p class="text-light/70 text-sm">for comprehensive reporting</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-mono text-light mb-4">Example Test Suite:</h4>
+                        <pre class="bg-dark rounded-lg"><code class="language-javascript">describe('User Authentication', () => {
+  it('should login successfully', () => {
+    cy.visit('/login')
+    cy.get('[data-cy=email]').type('user@test.com')
+    cy.get('[data-cy=password]').type('password123')
+    cy.get('[data-cy=submit]').click()
+    cy.url().should('include', '/dashboard')
+  }
+}</code></pre>
+                    </div>
+                    <div class="flex justify-end">
+                        <button id="sample-code-btn" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                            <i class="fas fa-code"></i>
+                            <span>See Sample Code</span>
+                        </button>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 flex items-center justify-center">
+                        <dotlottie-wc src="https://lottie.host/79f41f56-0a40-442e-a860-5d016858c0ad/Y8EWC2fNmT.lottie" style="width: 200px; height: 200px;" speed="1" autoplay loop></dotlottie-wc>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Certifications & Learning</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fas fa-certificate text-4xl text-primary"></i>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Completed</span>
+                        <dotlottie-wc src="https://lottie.host/5af132e2-d989-4637-bf62-5aae15cf04b0/E40JD20TDD.lottie" style="width: 40px; height: 40px; display: inline-block; vertical-align: middle; margin-left: 8px;" speed="1" autoplay loop></dotlottie-wc>
+                    </div>
+                    <h3 class="text-2xl font-mono text-light mb-2">Microsoft Playwright</h3>
+                    <p class="text-light/70 mb-4">Certified in end-to-end testing automation using Microsoft's Playwright framework for web testing.</p>
+                    <div class="flex justify-center">
+                        <a href="documents/Playwright Certificate Transcript.pdf" target="_blank" class="bg-primary/10 hover:bg-primary/20 text-primary px-6 py-2 rounded-lg transition-colors text-center group">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span>View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fas fa-graduation-cap text-4xl text-primary"></i>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">In Progress</span>
+                    </div>
+                    <h3 class="text-2xl font-mono text-light mb-2">QA Professional Development</h3>
+                    <p class="text-light/70">Advanced training in testing methodologies, test design patterns, and industry best practices.</p>
+                </div>
+
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fas fa-sync text-4xl text-primary"></i>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-500 rounded-full text-sm">Ongoing</span>
+                    </div>
+                    <h3 class="text-2xl font-mono text-light mb-2">Continuous Learning</h3>
+                    <p class="text-light/70">Staying updated with latest testing trends, tools, and emerging technologies in the QA field.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Tools & Technologies</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto stagger">
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group hover-scale">
+                    <i class="fas fa-code text-4xl text-primary mb-4 group-hover:scale-110 transition-transform rotate-in"></i>
+                    <h5 class="text-light font-mono fade-in" style="animation-delay: 0.2s;">Cypress</h5>
+                </div>
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
+                    <i class="fas fa-paper-plane text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="text-light font-mono">Postman</h5>
+                </div>
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
+                    <i class="fas fa-mobile-alt text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="text-light font-mono">TestFlight</h5>
+                </div>
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
+                    <i class="fas fa-tasks text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="text-light font-mono">JIRA</h5>
+                </div>
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
+                    <i class="fas fa-database text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="text-light font-mono">MySQL</h5>
+                </div>
+                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
+                    <i class="fab fa-github text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="text-light font-mono">GitHub</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Let's Connect</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-12 stagger">
+                    <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 hover-lift">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center rotate-in">
+                                <i class="fas fa-envelope text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-light font-mono mb-1">Email</h5>
+                                <a href="mailto:umerchaudhary2831@gmail.com" class="text-primary hover:text-primary/80 transition-colors">umerchaudhary2831@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-light font-mono mb-1">Phone</h5>
+                                <a href="tel:+923087397486" class="text-primary hover:text-primary/80 transition-colors">+92 308 7397486</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-8 text-center relative overflow-hidden">
+                    <p class="text-light/70 mb-6">Feel free to reach out via email:</p>
+                    <div class="flex items-center justify-center gap-6 relative">
+                        <div class="relative">
+                            <!-- Animated particles -->
+                            <div class="absolute -inset-4 opacity-0 group-hover:opacity-100">
+                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle1"></div>
+                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle2" style="animation-delay: 0.1s"></div>
+                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle1" style="animation-delay: 0.2s"></div>
+                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle2" style="animation-delay: 0.3s"></div>
+                            </div>
+                            <!-- Glowing button effect -->
+                            <div class="absolute inset-0 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-all duration-300 animate-pulse"></div>
+                            <!-- Main button -->
+                            <a href="mailto:umerchaudhary2831@gmail.com" class="group bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all duration-300 inline-flex items-center gap-2 relative hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1">
+                                <dotlottie-wc src="https://lottie.host/6417eb93-d1c9-4d2c-b692-8cb3be9f4f9e/4U637PDVXZ.lottie" background="transparent" style="width: 24px; height: 24px;" speed="1" autoplay loop></dotlottie-wc>
+                                <span class="relative z-10">Send Email</span>
+                                <!-- Click ripple effect -->
+                                <span class="absolute inset-0 rounded-full bg-white/30 opacity-0 group-hover:opacity-100 group-active:scale-90 transition-all duration-300"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary/50 border-t border-primary/10">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="md:col-span-2">
+                    <h4 class="text-2xl font-mono text-primary mb-4">Muhammad Umer Akram</h4>
+                    <p class="text-light/70 mb-6">Quality Assurance Engineer passionate about delivering exceptional software quality through innovative testing solutions and automation frameworks.</p>
+                    <div class="flex gap-4">
+                        <a href="https://linkedin.com/in/muhammad-umer-akram" class="text-light/70 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://instagram.com/yours_umer" class="text-light/70 hover:text-primary transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-lg font-mono text-light mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-light/70 hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#projects" class="text-light/70 hover:text-primary transition-colors">Projects</a></li>
+                        <li><a href="#certifications" class="text-light/70 hover:text-primary transition-colors">Certifications</a></li>
+                        <li><a href="#contact" class="text-light/70 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-mono text-light mb-4">Services</h5>
+                    <ul class="space-y-2">
+                        <li class="text-light/70">Test Automation</li>
+                        <li class="text-light/70">API Testing</li>
+                        <li class="text-light/70">Mobile Testing</li>
+                        <li class="text-light/70">QA Consulting</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-primary/10 mt-12 pt-8 text-center">
+                <p class="text-light/70 mb-2">&copy; 2025 Muhammad Umer Akram. All rights reserved.</p>
+                <p class="text-light/50 text-sm">Made with passion for quality in Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sample Code Modal -->
+    <div id="sample-code-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-dark/95 border border-primary/20 rounded-xl max-w-7xl w-full h-[75vh] flex flex-col overflow-hidden">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-6 border-b border-primary/10">
+                <h3 class="text-2xl font-mono text-primary">Sample Automation Code</h3>
+                <button id="close-modal" class="text-light/70 hover:text-primary transition-colors text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Content: Stacked Layout -->
+            <div class="p-6 space-y-8 flex-1 overflow-y-auto">
+                <!-- Sample Function -->
+                <div>
+                    <h4 class="text-xl font-mono text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-function text-primary"></i>
+                        Sample Function
+                    </h4>
+                    <div class="bg-dark/80 rounded-lg border border-primary/10 text-xs md:text-sm" style="height: 300px; overflow: hidden;">
+                        <pre style="height: 100%; overflow: scroll; padding: 1rem; margin: 0; scrollbar-width: thin; scrollbar-color: #0891b2 #1e293b;"><code class="language-javascript">export const generateRandomString = (length = 11) => {
+  const randomNumber = Math.random()
+  const randomString = randomNumber.toString(36).substring(2)
+ 
+  if (randomString.length < length) {
+    return randomString.padEnd(length, '0')
+  }
+  return randomString.slice(0, length)
+}
+</code></pre>
+                    </div>
+                </div>
+
+                <!-- Test Case Function -->
+                <div>
+                    <h4 class="text-xl font-mono text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-vial text-primary"></i>
+                        Test Case Function
+                    </h4>
+                    <div class="bg-dark/80 rounded-lg border border-primary/10 text-xs md:text-sm" style="height: 300px; overflow: hidden;">
+                        <pre style="height: 100%; overflow: scroll; padding: 1rem; margin: 0; scrollbar-width: thin; scrollbar-color: #0891b2 #1e293b;"><code class="language-javascript">import { interceptGqlRequest, generateRandomString} from "../../utils/helpers"
+
+// ApiKey class for API key management test cases
+class ApiKey {
+  constructor() {
+    this.verifyAPIRoute()
+  }
+  // Navigates to the API Keys settings page
+  verifyAPIRoute(){
+    cy.visit('/sites')
+    cy.get("[data-attribute='dropdown-user-profile']").click()
+    cy.get("[data-attribute='dropdown-item-user-account']").click()
+    cy.get("[data-attribute='setting-card-api-keys']").click()
+  }
+
+  // Generates a new API key and verifies the process
+  verifyGenerateApi(){
+    interceptGqlRequest({ alias: 'generateApiKey' })
+    cy.get("[data-attribute='button-generate-api-key']").click() // click on generate api button
+    cy.get("[data-attribute='input-api-name']").type(generateRandomString()) // type api key name
+    cy.get("[data-attribute= 'button-modal-save-api-key']").click() // click on save button
+    cy.wait('@generateApiKey')
+  }
+
+  // Deletes an API key and verifies the process
+  verifyDeleteApi(){
+    interceptGqlRequest({ alias: 'deleteApiKey' })
+    cy.get("[data-attribute='dropdown-menu-button']").first().click()
+    cy.get("[data-attribute='dropdown-item-api-delete']").click({ waitForAnimations: true})
+    cy.get("[data-attribute='button-delete-api-key']").click()
+    cy.wait('@deleteApiKey')
+  }
+
+  // Deactivates an API key and verifies the process
+  verifyDeactivateApi(){
+    interceptGqlRequest({ alias: 'updateApiKey' })
+    cy.get("[data-attribute='dropdown-menu-button']").first().click()
+    cy.get("[data-attribute='dropdown-item-api-deactivate']").click()
+    cy.wait('@updateApiKey')    
+  }
+
+  // Activates an API key and verifies the process
+  verifyActivateApi(){
+    interceptGqlRequest({ alias: 'updateApiKey' })
+    cy.get("[data-attribute='dropdown-menu-button']").first().click()
+    cy.get("[data-attribute='dropdown-item-api-deactivate']").click()
+    cy.wait('@updateApiKey')
+  }
+}
+export default ApiKey</code></pre>
+                    </div>
+                </div>
+
+                <!-- Test Execution -->
+                <div>
+                    <h4 class="text-xl font-mono text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-play text-primary"></i>
+                        Test Execution
+                    </h4>
+                    <div class="bg-dark/80 rounded-lg border border-primary/10 text-xs md:text-sm" style="height: 300px; overflow: hidden;">
+                        <pre style="height: 100%; overflow: scroll; padding: 1rem; margin: 0; scrollbar-width: thin; scrollbar-color: #0891b2 #1e293b;"><code class="language-javascript">import ApiKey from "../../pages/Account/ApiKey"
+
+context('Cypress Mailmunch -Account  Settings Page Tests', () => {
+  beforeEach(() => {
+    cy.login()
+    cy.visitPartnerSite();
+  })
+
+  it('Verify API key Route ', () => {
+    const ApiKeyTest = new ApiKey()
+    ApiKeyTest.verifyAPIRoute()
+} )
+
+  it('generate Api key ', () => {
+      const ApiKeyTest = new ApiKey()
+      ApiKeyTest.verifyGenerateApi()
+  } )
+
+  it('deactivate Api key', ()=>{
+    const ApiKeyTest = new ApiKey()
+    ApiKeyTest.verifyDeactivateApi()
+  } )
+ 
+  it('activate Api key', ()=>{
+    const ApiKeyTest = new ApiKey()
+    ApiKeyTest.verifyActivateApi()
+  } )
+ 
+  it('Delete Api key  ', () => {
+      const ApiKeyTest = new ApiKey()
+      ApiKeyTest.verifyDeleteApi()
+  } )
+     
+ 
+})</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
