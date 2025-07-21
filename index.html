@@ -670,15 +670,29 @@
                     </div>
                     <div class="mb-6">
                         <h4 class="text-lg font-mono text-light mb-4">Example Test Suite:</h4>
-                        <pre class="bg-dark rounded-lg"><code class="language-javascript">describe('User Authentication', () => {
-  it('should login successfully', () => {
-    cy.visit('/login')
-    cy.get('[data-cy=email]').type('user@test.com')
-    cy.get('[data-cy=password]').type('password123')
-    cy.get('[data-cy=submit]').click()
-    cy.url().should('include', '/dashboard')
-  }
-}</code></pre>
+                        <pre class="bg-dark rounded-lg"><code class="language-yaml"># .github/workflows/test.yml
+name: Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+</code></pre>
                     </div>
                     <div class="flex justify-end">
                         <button id="sample-code-btn" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
