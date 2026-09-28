@@ -1,1029 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Umer Akram - QA Engineer & Test Automation Specialist</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Highlight.js -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css" rel="stylesheet">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0891b2',
-                        secondary: '#1e293b',
-                        dark: '#0f172a',
-                        light: '#f8fafc'
-                    },
-                    fontFamily: {
-                        'mono': ['JetBrains Mono', 'monospace'],
-                        'sans': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .skill-bar { @apply h-2 rounded-full bg-primary/20 overflow-hidden; }
-        .skill-progress { @apply h-full bg-primary rounded-full transition-all duration-1000; }
-        
-        /* Animation utilities */
-        .fade-in { opacity: 0; animation: fadeIn 0.8s ease-in forwards; }
-        .slide-up { opacity: 0; transform: translateY(20px); animation: slideUp 0.8s ease-out forwards; }
-        .scale-in { opacity: 0; transform: scale(0.95); animation: scaleIn 0.5s ease-out forwards; }
-        .rotate-in { opacity: 0; transform: rotate(-10deg); animation: rotateIn 0.6s ease-out forwards; }
-        
-        /* Animation keyframes */
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes scaleIn {
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes rotateIn {
-            to { opacity: 1; transform: rotate(0); }
-        }
-        
-        /* Hover animations */
-        .hover-lift { transition: transform 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); }
-        
-        .hover-scale { transition: transform 0.3s ease; }
-        .hover-scale:hover { transform: scale(1.05); }
-        
-        .hover-rotate { transition: transform 0.3s ease; }
-        .hover-rotate:hover { transform: rotate(5deg); }
-        
-        /* Stagger children animations */
-        .stagger > * {
-            opacity: 0;
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-        .stagger > *:nth-child(1) { animation-delay: 0.1s; }
-        .stagger > *:nth-child(2) { animation-delay: 0.2s; }
-        .stagger > *:nth-child(3) { animation-delay: 0.3s; }
-        .stagger > *:nth-child(4) { animation-delay: 0.4s; }
-        .stagger > *:nth-child(5) { animation-delay: 0.5s; }
-        .stagger > *:nth-child(6) { animation-delay: 0.6s; }
-
-        /* Button animations */
-        @keyframes particle1 {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-100%, -100%) scale(0);
-                opacity: 0;
-            }
-        }
-
-        @keyframes particle2 {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(100%, -100%) scale(0);
-                opacity: 0;
-            }
-        }
-
-        .animate-particle1 {
-            animation: particle1 0.8s ease-out infinite;
-        }
-
-        .animate-particle2 {
-            animation: particle2 0.8s ease-out infinite;
-        }
-
-        /* Button animation keyframes */
-        @keyframes ping {
-            75%, 100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        @keyframes pulse {
-            50% {
-                opacity: .5;
-            }
-        }
-
-        @keyframes particle1 {
-            0% { transform: translate(0, 0) scale(1); opacity: 1; }
-            100% { transform: translate(-20px, -20px) scale(0); opacity: 0; }
-        }
-
-        @keyframes particle2 {
-            0% { transform: translate(0, 0) scale(1); opacity: 1; }
-            100% { transform: translate(20px, -20px) scale(0); opacity: 0; }
-        }
-
-        .animate-ping {
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        .animate-particle1 {
-            animation: particle1 1s ease-out infinite;
-        }
-
-        .animate-particle2 {
-            animation: particle2 1s ease-out infinite;
-        }
-
-        /* New animation classes */
-        .tech-nav-animate {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .tech-glow {
-            text-shadow: 0 0 10px rgba(8, 145, 178, 0.5);
-        }
-
-        .tech-underline {
-            position: relative;
-        }
-
-        .tech-underline::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 2px;
-            background-color: #0891b2;
-            transition: width 0.3s ease-in-out;
-        }
-
-        .tech-underline:hover::after {
-            width: 100%;
-        }
-
-        .tech-btn-glow {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-btn-glow::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(8, 145, 178, 0.3) 0%, rgba(8, 145, 178, 0) 70%);
-            transform: translate(-50%, -50%) scale(0);
-            border-radius: 50%;
-            opacity: 0;
-            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-        }
-
-        .tech-btn-glow:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .tech-ripple {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-ripple::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-        }
-
-        .tech-ripple:active::after {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .tech-skill-bar {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-skill-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, #0891b2, #0891b2 50%, #1e293b 50%, #1e293b);
-            z-index: -1;
-            opacity: 0.1;
-            transform: skewX(-10deg);
-        }
-
-        .tech-card-glow {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-card-glow::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(8, 145, 178, 0.1) 0%, rgba(8, 145, 178, 0) 70%);
-            border-radius: 10px;
-            opacity: 0;
-            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-        }
-
-        .tech-card-glow:hover::before {
-            transform: scale(1.05);
-            opacity: 1;
-        }
-
-        .tech-bg-animate {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-bg-animate::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            opacity: 0.1;
-            z-index: -1;
-            animation: bg-animation 20s infinite linear;
-        }
-
-        @keyframes bg-animation {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(10%, 10%); }
-            50% { transform: translate(20%, -10%); }
-            75% { transform: translate(-10%, 20%); }
-            100% { transform: translate(0, 0); }
-        }
-        html[data-theme="dark"] body { background: #000 !important; color: #f8fafc !important; }
-        html[data-theme="light"] body { background: #f8fafc !important; color: #0f172a !important; }
-    </style>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Umer Akram | Software Quality Assurance Engineer</title>
+  <meta name="description" content="Software Quality Assurance Engineer in Lahore, Pakistan. Embedded systems, Linux build automation, GTest, web/mobile, API, and Cypress automation. Experience at Byonyks and MailMunch.">
+  <meta name="author" content="Muhammad Umer Akram">
+  <meta name="keywords" content="Software QA Engineer, Test Automation, Byonyks, Linux, GTest, Cypress, Playwright, API Testing, Mobile Testing, MailMunch">
+  <link rel="canonical" href="https://muhamadumerakram.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Muhammad Umer Akram | Software Quality Assurance Engineer">
+  <meta property="og:description" content="QA engineer specializing in web, mobile, API, and Cypress automation testing.">
+  <meta property="og:url" content="https://muhamadumerakram.github.io/portfolio/">
+  <meta property="og:image" content="https://muhamadumerakram.github.io/portfolio/img/Photo.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Animated SVG Blob Background -->
-    <div id="bg-blob" aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none select-none">
-        <svg width="100%" height="100%" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-            <defs>
-                <radialGradient id="blobGradient" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
-                    <stop offset="0%" stop-color="#00fff7" stop-opacity="0.5"/>
-                    <stop offset="100%" stop-color="#0891b2" stop-opacity="0.2"/>
-                </radialGradient>
-            </defs>
-            <g>
-                <animateTransform attributeName="transform" type="translate" values="0 0; 40 20; 0 0" dur="12s" repeatCount="indefinite"/>
-                <path fill="url(#blobGradient)" fill-opacity="0.7">
-                    <animate attributeName="d" dur="12s" repeatCount="indefinite"
-                        values="M0,0 Q720,200 1440,0 Q1300,450 1440,900 Q720,700 0,900 Q200,450 0,0Z;
-                                M0,0 Q720,300 1440,0 Q1300,600 1440,900 Q720,800 0,900 Q200,600 0,0Z;
-                                M0,0 Q720,200 1440,0 Q1300,450 1440,900 Q720,700 0,900 Q200,450 0,0Z"/>
-                </path>
-            </g>
-        </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="bg-layer" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div id="pointer-glow" class="pointer-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">MUA<span>.</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#bug-lab">Bug Lab</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-dark/95 backdrop-blur-md z-50 border-b border-primary/10">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-4">
-                    <a href="#" class="text-primary font-mono text-xl font-bold" style="color: #00fff7;">MUA</a>
-                    <!-- Light/Dark Mode Toggle Button in Nav -->
-                    <button id="theme-toggle" class="ml-2 bg-white/80 dark:bg-dark/80 border border-primary rounded-full shadow-lg p-2 flex items-center justify-center transition-colors duration-300 hover:scale-110" aria-label="Toggle light/dark mode">
-                        <span id="theme-icon" class="text-primary text-xl">
-                            <i class="fas fa-moon"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-light/70 hover:text-primary transition-colors">About</a>
-                    <a href="#experience" class="text-light/70 hover:text-primary transition-colors">Experience</a>
-                    <a href="#projects" class="text-light/70 hover:text-primary transition-colors">Projects</a>
-                    <a href="#framework" class="text-light/70 hover:text-primary transition-colors">Framework</a>
-                    <a href="#contact" class="text-light/70 hover:text-primary transition-colors">Contact</a>
-                </div>
-                <button class="md:hidden text-light/70 hover:text-primary">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+  </header>
 
-    <!-- Home Section -->
-    <section id="home" class="min-h-screen bg-dark flex items-center border-b border-primary/10">
-        <div class="container mx-auto px-4 py-20">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="w-48 h-48 mx-auto mb-8 rounded-full border-4 border-primary/20 overflow-hidden scale-in">
-                    <img src="img/Photo.jpg" alt="Muhammad Umer Akram" class="w-full h-full object-cover hover-scale">
-                </div>
-                <h1 class="text-5xl md:text-6xl font-mono font-bold text-light mb-4 slide-up" style="animation-delay: 0.2s;">
-                    Muhammad Umer Akram
-                </h1>
-                <h2 class="text-xl md:text-2xl text-primary font-mono mb-6 slide-up" style="animation-delay: 0.4s;">
-                    Quality Assurance Engineer | Test Automation Specialist
-                </h2>
-                <p class="text-light/70 text-lg mb-8 max-w-2xl mx-auto fade-in" style="animation-delay: 0.6s;">
-                    Ensuring software excellence through innovative testing strategies and automation frameworks. 
-                    2+ years of experience delivering quality solutions.
-                </p>
-                <div class="flex justify-center gap-4 fade-in" style="animation-delay: 0.8s;">
-                    <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
-                        Contact Me
-                    </a>
-                    <a href="documents/(Umer Akram)SQA Engineer Resume.pdf" download class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all duration-300 group">
-                        <span class="flex items-center gap-2">
-                            Download Resume
-                            <i class="fas fa-download group-hover:translate-y-0.5 transition-transform"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="role">Software Quality Assurance Engineer</p>
+          <h1>I find the defects others miss.</h1>
+          <p class="hero-copy">
+            Muhammad Umer Akram — Software Quality Assurance Engineer with experience in web, mobile, API, embedded systems, and test automation. Based in Lahore, Punjab, Pakistan.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View my work</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
+            <a class="icon-link" href="https://linkedin.com/in/muhammad-umer-akram" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.5h4.56V23H.22V8.5zM8.34 8.5h4.37v1.98h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.9h-4.56v-7c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.68v7.13H8.34V8.5z"/></svg>
+            </a>
+            <a class="icon-link" href="https://github.com/muhamadumerakram" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.8 1.6 2.7 2.2.8-.6 1.3-1 1.5-1.6-2.6-.3-5.4-1.3-5.4-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.4 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="documents/SQA Engineer Muhammad Umer Akram.pdf" download>Download resume</a>
+          </div>
+          <div class="focus-pills" aria-label="Focus areas">
+            <span class="pill">Automation Testing</span>
+            <span class="pill">Linux &amp; Embedded</span>
+            <span class="pill">Web Testing</span>
+            <span class="pill">API Testing</span>
+            <span class="pill">Mobile Testing</span>
+          </div>
         </div>
+        <aside class="glass portrait-card reveal">
+          <img src="img/Photo.jpg" alt="Portrait of Muhammad Umer Akram">
+          <div class="status-row">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Byonyks · Current role</span>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-secondary/50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">About Me</h2>
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-mono text-light mb-4">Professional Summary</h3>
-                    <p class="text-light/70 leading-relaxed">
-                        I'm a dedicated Software Quality Assurance Engineer with 2+ years of experience at MailMunch, specializing in test automation, API testing, and comprehensive QA processes. My analytical mindset and attention to detail drive me to ensure software excellence in every project.
-                    </p>
-                    <p class="text-light/70 leading-relaxed">
-                        Based in Lahore, Punjab, Pakistan, I hold a BS in Computer Science from MNS University of Agriculture, Multan. I'm passionate about transforming manual testing processes into efficient automated solutions that deliver measurable business impact.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Analytical</span>
-                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Detail-Oriented</span>
-                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Collaborative</span>
-                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full">Problem Solver</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                    <dotlottie-wc src="https://lottie.host/23be15c4-35d1-4fda-b072-318097ec9308/waeTUrYg3g.lottie" style="width: 300px; height: 300px;" speed="1" autoplay loop></dotlottie-wc>
-                        </div>
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section-kicker">About</p>
+        <h2 class="section-title">Quality engineering with a practical bias</h2>
+        <div class="about-grid">
+          <div class="glass" style="padding:28px">
+            <p>I am an ambitious Software Quality Assurance Engineer with extensive experience in software testing and quality assurance across Byonyks and MailMunch. My focus spans Linux system automation, embedded unit testing (GTest), Cypress web automation (POM architecture), REST API testing, and mobile QA.</p>
+            <p>I hold a BS in Computer Science from MNS University of Agriculture, Multan (CGPA 3.31). I am passionate about transforming manual test processes into reliable, repeatable automated workflows that deliver high software quality.</p>
+            <div class="trait-list">
+              <span class="pill">Analytical</span>
+              <span class="pill">Detail-oriented</span>
+              <span class="pill">Collaborative</span>
+              <span class="pill">Problem solver</span>
             </div>
+          </div>
+          <div class="glass command-card">
+            <p class="section-kicker">Education</p>
+            <h3>BS Computer Science</h3>
+            <p>MNS University of Agriculture, Multan</p>
+            <p>CGPA: 3.31 · Graduated 2019</p>
+            <p>Lahore, Punjab, Pakistan</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Skills & Expertise</h2>
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div class="fade-in" style="animation-delay: 0.2s;">
-                    <h3 class="text-2xl font-mono text-light mb-6">Testing Types</h3>
-                    <div class="space-y-6 stagger">
-                        <div class="space-y-2 hover-lift">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">Manual Testing</span>
-                                <span class="text-primary">95%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">Automation Testing</span>
-                                <span class="text-primary">70%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">API Testing</span>
-                                <span class="text-primary">60%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 60%"></div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">Mobile Testing</span>
-                                <span class="text-primary">70%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-mono text-light mb-6">Tools & Technologies</h3>
-                    <div class="space-y-6">
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">Cypress</span>
-                                <span class="text-primary">80%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">Postman</span>
-                                <span class="text-primary">60%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 60%"></div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">JIRA</span>
-                                <span class="text-primary">88%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-light">MySQL</span>
-                                <span class="text-primary">60%</span>
-                            </div>
-                            <div class="skill-bar" style="height: 20px; min-height: 20px; background: #222e3a; display: block; opacity: 1; position: relative; z-index: 1;">
-                                <div class="skill-progress" style="width: 60%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="command-center" class="section" style="padding-top:0">
+      <div class="container">
+        <p class="section-kicker">QA Command Center</p>
+        <h2 class="section-title">Coverage across the product surface</h2>
+        <p class="section-lead">A structured view of testing expertise — Linux &amp; embedded systems, web automation, mobile applications, and API validation.</p>
+        <div class="command-grid">
+          <article class="glass glass-hover command-card">
+            <p class="project-type">Linux &amp; Systems</p>
+            <h3>Embedded &amp; Systems Automation</h3>
+            <ul>
+              <li>Surround SCM deployment automation</li>
+              <li>Google Test (GTest) C++ unit testing</li>
+              <li>Linux binary generation &amp; execution</li>
+            </ul>
+          </article>
+          <article class="glass glass-hover command-card">
+            <p class="project-type">Web</p>
+            <h3>Web &amp; Cypress Automation</h3>
+            <ul>
+              <li>Page Object Model (POM) framework</li>
+              <li>Daily GitHub Actions CI (10:00AM PST)</li>
+              <li>20+ suites &amp; 100+ test cases</li>
+            </ul>
+          </article>
+          <article class="glass glass-hover command-card">
+            <p class="project-type">API &amp; Data</p>
+            <h3>API &amp; Database Testing</h3>
+            <ul>
+              <li>Postman REST API collection testing</li>
+              <li>MySQL data flow &amp; reporting</li>
+              <li>Network request interception</li>
+            </ul>
+          </article>
+          <article class="glass glass-hover command-card">
+            <p class="project-type">Mobile</p>
+            <h3>Android &amp; iOS Testing</h3>
+            <ul>
+              <li>Shopbae App E-commerce flows</li>
+              <li>TestFlight iOS build distribution</li>
+              <li>Farm Data Analytical System</li>
+            </ul>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-secondary/50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Professional Experience</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-8" data-animate="scale-in">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                        <div>
-                            <h3 class="text-2xl font-mono text-light">Software Quality Assurance Engineer</h3>
-                            <p class="text-primary mt-2">MailMunch</p>
-                        </div>
-                        <div class="mt-2 md:mt-0">
-                            <span class="text-light/70">December 2022 - Present</span>
-                            <span class="ml-3 text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">Current Role</span>
-                        </div>
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-lg font-mono text-light mb-3">Key Responsibilities:</h4>
-                            <ul class="list-disc list-inside text-light/70 space-y-2">
-                                <li>Developed comprehensive test automation frameworks</li>
-                                <li>Conducted thorough API testing using Postman</li>
-                                <li>Implemented CI/CD testing with GitHub Actions</li>
-                                <li>Managed bug tracking and reporting in JIRA</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-mono text-light mb-3">Technologies Used:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Cypress</span>
-                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Postman</span>
-                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JIRA</span>
-                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">MySQL</span>
-                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">GitHub Actions</span>
-                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Confluence</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-mono text-light mb-3">Key Achievements:</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-dark/50 p-4 rounded-lg border border-primary/10">
-                                    <p class="text-2xl font-mono text-primary mb-1">95%</p>
-                                    <p class="text-light/70">Bug Detection Rate</p>
-                                </div>
-                                <div class="bg-dark/50 p-4 rounded-lg border border-primary/10">
-                                    <p class="text-2xl font-mono text-primary mb-1">70%</p>
-                                    <p class="text-light/70">Reduced Testing Time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="section-kicker">Testing arsenal</p>
+        <h2 class="section-title">Tools and practices in active use</h2>
+        <div class="arsenal">
+          <div class="glass arsenal-group">
+            <h3>Testing &amp; QA</h3>
+            <div class="skill-cloud">
+              <span class="skill-chip">Automation Testing</span>
+              <span class="skill-chip">Manual Testing</span>
+              <span class="skill-chip">API Testing</span>
+              <span class="skill-chip">Mobile App Testing</span>
+              <span class="skill-chip">Web Application Testing</span>
+              <span class="skill-chip">Regression Testing</span>
+              <span class="skill-chip">Bug Verification &amp; Validation</span>
+              <span class="skill-chip">Embedded Systems Testing</span>
+              <span class="skill-chip">Database Testing</span>
+              <span class="skill-chip">UI/UX Validation</span>
             </div>
+          </div>
+          <div class="glass arsenal-group">
+            <h3>Automation &amp; Scripting</h3>
+            <div class="skill-cloud">
+              <span class="skill-chip">Cypress Automation</span>
+              <span class="skill-chip">Google Test (GTest)</span>
+              <span class="skill-chip">Playwright</span>
+              <span class="skill-chip">Page Object Model (POM)</span>
+              <span class="skill-chip">Custom Script Development</span>
+              <span class="skill-chip">GitHub Actions</span>
+              <span class="skill-chip">Basic Linux Scripting</span>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="glass arsenal-group">
+              <h3>API &amp; Database</h3>
+              <div class="skill-cloud">
+                <span class="skill-chip">Postman</span>
+                <span class="skill-chip">REST APIs</span>
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">Postico</span>
+                <span class="skill-chip">Request Interception</span>
+              </div>
+            </div>
+            <div class="glass arsenal-group">
+              <h3>Tools &amp; ALM</h3>
+              <div class="skill-cloud">
+                <span class="skill-chip">Surround SCM</span>
+                <span class="skill-chip">Helix ALM</span>
+                <span class="skill-chip">Linux Systems</span>
+                <span class="skill-chip">JIRA</span>
+                <span class="skill-chip">Confluence</span>
+                <span class="skill-chip">Docker</span>
+                <span class="skill-chip">Git &amp; GitHub Desktop</span>
+                <span class="skill-chip">TestFlight</span>
+                <span class="skill-chip">Slack</span>
+                <span class="skill-chip">Loom</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Projects Showcase</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger">
-                <!-- MailMunch Platform -->
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300" data-animate="scale-in">
-                    <h3 class="text-2xl font-mono text-light mb-2 slide-up">MailMunch Platform</h3>
-                    <p class="text-primary mb-4 fade-in" style="animation-delay: 0.2s;">Web Testing</p>
-                    <p class="text-light/70 mb-6">
-                        End-to-end testing of email marketing platform including form builders, email campaigns, and analytics dashboard with automated testing frameworks.
-                    </p>
-                    <div class="mb-6">
-                        <h4 class="text-lg font-mono text-light mb-3">Testing Approaches:</h4>
-                        <ul class="list-disc list-inside text-light/70 space-y-2">
-                            <li>Automated E2E testing with Cypress</li>
-                            <li>API testing with Postman collections</li>
-                            <li>Cross-browser compatibility testing</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Cypress</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">API Testing</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Automation</span>
-                    </div>
-                </div>
-
-                <!-- Shopbae Mobile App -->
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
-                    <h3 class="text-2xl font-mono text-light mb-2">Shopbae Mobile App</h3>
-                    <p class="text-primary mb-4">Mobile Testing</p>
-                    <p class="text-light/70 mb-6">
-                        Comprehensive mobile application testing for e-commerce platform focusing on payment integration, user flows, and performance across various mobile devices.
-                    </p>
-                    <div class="mb-6">
-                        <h4 class="text-lg font-mono text-light mb-3">Testing Approaches:</h4>
-                        <ul class="list-disc list-inside text-light/70 space-y-2">
-                            <li>Device compatibility testing</li>
-                            <li>Payment gateway integration testing</li>
-                            <li>User journey and usability testing</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Mobile</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">TestFlight</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">E-commerce</span>
-                    </div>
-                </div>
-
-                <!-- Farm Data Analytical System -->
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
-                    <h3 class="text-2xl font-mono text-light mb-2">Farm Data Analytical System</h3>
-                    <p class="text-primary mb-4">Android Testing</p>
-                    <p class="text-light/70 mb-6">
-                        Comprehensive testing of agricultural data management system focusing on data accuracy, user experience, and performance optimization across Android devices.
-                    </p>
-                    <div class="mb-6">
-                        <h4 class="text-lg font-mono text-light mb-3">Testing Approaches:</h4>
-                        <ul class="list-disc list-inside text-light/70 space-y-2">
-                            <li>Functional testing across multiple Android versions</li>
-                            <li>Performance testing with large datasets</li>
-                            <li>UI/UX validation and accessibility testing</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Android</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Manual Testing</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Performance</span>
-                    </div>
-                </div>
+    <section id="experience" class="section">
+      <div class="container">
+        <p class="section-kicker">Experience</p>
+        <h2 class="section-title">Professional timeline</h2>
+        <div class="timeline">
+          <article class="glass timeline-card">
+            <h3>Software Quality Assurance Engineer</h3>
+            <div class="meta-row">
+              <strong>Byonyks</strong>
+              <span>August 2025 – Present · Lahore, Punjab</span>
+              <span class="badge">Current role</span>
             </div>
+            <h4>Responsibilities &amp; Key Contributions</h4>
+            <ul>
+              <li>Developed and maintained automation test scripts to retrieve specific software versions from Surround SCM, deploy them on Linux-based systems, and execute system binaries for validation.</li>
+              <li>Automated build verification and execution workflows, reducing manual testing effort and improving test repeatability.</li>
+              <li>Implemented unit tests for embedded systems using Google Test (GTest) to validate core functionalities and improve code reliability.</li>
+              <li>Performed manual and automated regression testing for bug fixes and new feature implementations.</li>
+              <li>Built and tested software from assigned development branches, generating new binaries to validate defect resolutions and feature behavior.</li>
+            </ul>
+            <h4>Testing technologies / tools</h4>
+            <div class="tools tech">
+              <span>Linux Systems</span><span>Google Test (GTest)</span><span>Surround SCM</span><span>Helix ALM</span><span>Automation Testing</span><span>Regression Testing</span><span>Command Line</span>
+            </div>
+            <div class="stat-grid">
+              <div class="stat"><strong>Automated</strong>Build &amp; deployment validation</div>
+              <div class="stat"><strong>GTest</strong>Embedded unit testing coverage</div>
+            </div>
+          </article>
+
+          <article class="glass timeline-card">
+            <h3>Software Quality Assurance Engineer</h3>
+            <div class="meta-row">
+              <strong>MailMunch</strong>
+              <span>December 2022 – August 2025 · Lahore, Punjab</span>
+            </div>
+            <h4>Responsibilities &amp; Key Contributions</h4>
+            <ul>
+              <li>Designed and implemented a comprehensive Cypress test framework using Page Object Model (POM) architecture, creating 20+ test suites with 100+ test cases covering critical user flows.</li>
+              <li>Integrated Cypress testing with GitHub Actions for daily automated execution at 10:00AM PST, reducing regression testing time by 70%.</li>
+              <li>Monitored data flow from front-end to database (MySQL) and Mixpanel, extracting data using MySQL queries and generating performance/usage reports.</li>
+              <li>Conducted REST API testing using Postman, network request interception patterns, and Gmail API integration for end-to-end user verification flows.</li>
+              <li>Collaborated with cross-functional teams to develop test plans, achieving a 95% success rate in finding critical bugs prior to product launch.</li>
+              <li>Documented local setup instructions and testing protocols on Confluence, standardizing QA onboarding.</li>
+            </ul>
+            <h4>Testing technologies / tools</h4>
+            <div class="tools tech">
+              <span>Cypress</span><span>Postman</span><span>JIRA</span><span>MySQL</span><span>GitHub Actions</span><span>Confluence</span><span>AWS Reporting</span><span>Slack</span>
+            </div>
+            <div class="stat-grid">
+              <div class="stat"><strong>95%</strong>Critical bug detection rate</div>
+              <div class="stat"><strong>70%</strong>Reduced regression testing time</div>
+              <div class="stat"><strong>60%</strong>Manual effort saved</div>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Automation Framework Section -->
-    <section id="framework" class="py-20 bg-secondary/50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Automation Framework</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-8 flex flex-col md:flex-row items-center gap-8" data-animate="scale-in">
-                    <div class="flex-1">
-                    <h3 class="text-2xl font-mono text-light mb-6">Cypress Test Framework</h3>
-                    <p class="text-light/70 mb-8">
-                        Built a comprehensive test automation framework using Cypress with Page Object Model (POM) architecture, 
-                        integrated with GitHub Actions for continuous testing and AWS for detailed reporting.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i class="fas fa-check-circle text-primary"></i>
-                                <span class="text-light">20+ Test Suites</span>
-                            </div>
-                            <p class="text-light/70 text-sm">covering critical user journeys</p>
-                        </div>
-                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i class="fas fa-check-circle text-primary"></i>
-                                <span class="text-light">100+ Automated Test Cases</span>
-                            </div>
-                            <p class="text-light/70 text-sm">with POM architecture</p>
-                        </div>
-                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i class="fas fa-check-circle text-primary"></i>
-                                <span class="text-light">GitHub Actions CI/CD</span>
-                            </div>
-                            <p class="text-light/70 text-sm">pipeline integration</p>
-                        </div>
-                        <div class="bg-dark/80 rounded-lg p-4 border border-primary/10">
-                            <div class="flex items-center gap-3 mb-2">
-                                <i class="fas fa-check-circle text-primary"></i>
-                                <span class="text-light">AWS Integration</span>
-                            </div>
-                            <p class="text-light/70 text-sm">for comprehensive reporting</p>
-                        </div>
-                    </div>
-                    <div class="mb-6">
-                        <h4 class="text-lg font-mono text-light mb-4">Example Test Suite:</h4>
-                        <pre class="bg-dark rounded-lg"><code class="language-yaml"># .github/workflows/test.yml
-name: Run Tests
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
-</code></pre>
-                    </div>
-                    <div class="flex justify-end">
-                        <button id="sample-code-btn" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
-                            <i class="fas fa-code"></i>
-                            <span>See Sample Code</span>
-                        </button>
-                        </div>
-                    </div>
-                    <div class="flex-shrink-0 flex items-center justify-center">
-                        <dotlottie-wc src="https://lottie.host/79f41f56-0a40-442e-a860-5d016858c0ad/Y8EWC2fNmT.lottie" style="width: 200px; height: 200px;" speed="1" autoplay loop></dotlottie-wc>
-                    </div>
-                </div>
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="section-kicker">Projects</p>
+        <h2 class="section-title">QA case studies</h2>
+        <div class="project-grid">
+          <article class="glass glass-hover project-card">
+            <p class="project-type">Web application</p>
+            <h3>MailMunch Platform</h3>
+            <p>Email marketing platform covering form builders, campaigns, and analytics.</p>
+            <ul class="coverage">
+              <li>Functional / E2E</li>
+              <li>API</li>
+              <li>Cross-browser</li>
+              <li>Automation</li>
+            </ul>
+            <div class="tools"><span>Cypress</span><span>Postman</span><span>API Testing</span></div>
+            <div style="margin-top:16px">
+              <button class="btn btn-ghost" type="button" data-case-toggle aria-expanded="false" aria-controls="case-mailmunch">View case study</button>
             </div>
+            <div id="case-mailmunch" class="case-panel">
+              End-to-end testing of the email marketing platform, including form builders, email campaigns, and the analytics dashboard, supported by automated testing frameworks, Cypress E2E coverage, Postman collections, and cross-browser compatibility testing.
+            </div>
+          </article>
+
+          <article class="glass glass-hover project-card">
+            <p class="project-type">Mobile application</p>
+            <h3>Shopbae Mobile App</h3>
+            <p>E-commerce mobile app with payment integration and multi-device user flows.</p>
+            <ul class="coverage">
+              <li>Mobile</li>
+              <li>Functional journeys</li>
+              <li>Payment integration</li>
+              <li>Device compatibility</li>
+            </ul>
+            <div class="tools"><span>Mobile</span><span>TestFlight</span><span>E-commerce</span></div>
+            <div style="margin-top:16px">
+              <button class="btn btn-ghost" type="button" data-case-toggle aria-expanded="false" aria-controls="case-shopbae">View case study</button>
+            </div>
+            <div id="case-shopbae" class="case-panel">
+              Comprehensive mobile application testing for an e-commerce platform, focusing on payment integration, user flows, usability, and performance across devices, including TestFlight-based distribution testing.
+            </div>
+          </article>
+
+          <article class="glass glass-hover project-card">
+            <p class="project-type">Android application</p>
+            <h3>Farm Data Analytical System</h3>
+            <p>Agricultural data management with an emphasis on accuracy and performance.</p>
+            <ul class="coverage">
+              <li>Functional</li>
+              <li>Performance</li>
+              <li>UI/UX</li>
+              <li>Accessibility</li>
+            </ul>
+            <div class="tools"><span>Android</span><span>Manual Testing</span><span>Performance</span></div>
+            <div style="margin-top:16px">
+              <button class="btn btn-ghost" type="button" data-case-toggle aria-expanded="false" aria-controls="case-farm">View case study</button>
+            </div>
+            <div id="case-farm" class="case-panel">
+              Testing of an agricultural data management system with a focus on data accuracy, user experience, and performance across Android versions and large datasets, including UI/UX validation and accessibility testing.
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Certifications & Learning</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <i class="fas fa-certificate text-4xl text-primary"></i>
-                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Completed</span>
-                        <dotlottie-wc src="https://lottie.host/5af132e2-d989-4637-bf62-5aae15cf04b0/E40JD20TDD.lottie" style="width: 40px; height: 40px; display: inline-block; vertical-align: middle; margin-left: 8px;" speed="1" autoplay loop></dotlottie-wc>
-                    </div>
-                    <h3 class="text-2xl font-mono text-light mb-2">Microsoft Playwright</h3>
-                    <p class="text-light/70 mb-4">Certified in end-to-end testing automation using Microsoft's Playwright framework for web testing.</p>
-                    <div class="flex justify-center">
-                        <a href="documents/Playwright Certificate Transcript.pdf" target="_blank" class="bg-primary/10 hover:bg-primary/20 text-primary px-6 py-2 rounded-lg transition-colors text-center group">
-                            <i class="fas fa-eye mr-2"></i>
-                            <span>View Certificate</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <i class="fas fa-graduation-cap text-4xl text-primary"></i>
-                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">In Progress</span>
-                    </div>
-                    <h3 class="text-2xl font-mono text-light mb-2">QA Professional Development</h3>
-                    <p class="text-light/70">Advanced training in testing methodologies, test design patterns, and industry best practices.</p>
-                </div>
-
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <i class="fas fa-sync text-4xl text-primary"></i>
-                        <span class="px-3 py-1 bg-blue-500/20 text-blue-500 rounded-full text-sm">Ongoing</span>
-                    </div>
-                    <h3 class="text-2xl font-mono text-light mb-2">Continuous Learning</h3>
-                    <p class="text-light/70">Staying updated with latest testing trends, tools, and emerging technologies in the QA field.</p>
-                </div>
-            </div>
+    <section id="framework" class="section">
+      <div class="container">
+        <p class="section-kicker">Automation framework</p>
+        <h2 class="section-title">Cypress Page Object Model setup</h2>
+        <div class="glass" style="padding:28px">
+          <p>Built a comprehensive test automation framework using Cypress with Page Object Model architecture, integrated with GitHub Actions for continuous testing and AWS for detailed reporting.</p>
+          <div class="stat-grid">
+            <div class="stat"><strong>20+</strong>Test suites covering critical user journeys</div>
+            <div class="stat"><strong>100+</strong>Automated test cases with POM architecture</div>
+            <div class="stat"><strong>CI/CD</strong>GitHub Actions pipeline integration</div>
+            <div class="stat"><strong>AWS</strong>Reporting integration</div>
+          </div>
+          <div style="margin-top:20px">
+            <button class="btn btn-primary" id="sample-code-btn" type="button">See sample code</button>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Tools Section -->
-    <section id="tools" class="py-20 bg-secondary/50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Tools & Technologies</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto stagger">
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group hover-scale">
-                    <i class="fas fa-code text-4xl text-primary mb-4 group-hover:scale-110 transition-transform rotate-in"></i>
-                    <h5 class="text-light font-mono fade-in" style="animation-delay: 0.2s;">Cypress</h5>
-                </div>
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
-                    <i class="fas fa-paper-plane text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h5 class="text-light font-mono">Postman</h5>
-                </div>
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
-                    <i class="fas fa-mobile-alt text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h5 class="text-light font-mono">TestFlight</h5>
-                </div>
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
-                    <i class="fas fa-tasks text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h5 class="text-light font-mono">JIRA</h5>
-                </div>
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
-                    <i class="fas fa-database text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h5 class="text-light font-mono">MySQL</h5>
-                </div>
-                <div class="bg-dark/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 text-center group">
-                    <i class="fab fa-github text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h5 class="text-light font-mono">GitHub</h5>
-                </div>
-            </div>
+    <section id="certifications" class="section">
+      <div class="container">
+        <p class="section-kicker">Learning</p>
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+          <article class="glass cert-card">
+            <span class="badge">Completed</span>
+            <h3>Microsoft Playwright</h3>
+            <p>Certified in end-to-end testing automation using Microsoft Playwright for web testing.</p>
+            <a class="btn btn-ghost" href="documents/Playwright Certificate Transcript.pdf" target="_blank" rel="noopener">View certificate</a>
+          </article>
+          <article class="glass cert-card">
+            <span class="badge">In progress</span>
+            <h3>QA Professional Development</h3>
+            <p>Advanced training in testing methodologies, test design patterns, and industry best practices.</p>
+          </article>
+          <article class="glass cert-card">
+            <span class="badge">Ongoing</span>
+            <h3>Continuous learning</h3>
+            <p>Staying updated with testing trends, tools, and emerging technologies in QA.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-mono font-bold text-center text-primary mb-12">Let's Connect</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8 mb-12 stagger">
-                    <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300 hover-lift">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center rotate-in">
-                                <i class="fas fa-envelope text-2xl text-primary"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-light font-mono mb-1">Email</h5>
-                                <a href="mailto:umerchaudhary2831@gmail.com" class="text-primary hover:text-primary/80 transition-colors">umerchaudhary2831@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-secondary/50 rounded-lg border border-primary/10 p-6 hover:border-primary transition-all duration-300">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-phone text-2xl text-primary"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-light font-mono mb-1">Phone</h5>
-                                <a href="tel:+923087397486" class="text-primary hover:text-primary/80 transition-colors">+92 308 7397486</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-secondary/50 rounded-lg border border-primary/10 p-8 text-center relative overflow-hidden">
-                    <p class="text-light/70 mb-6">Feel free to reach out via email:</p>
-                    <div class="flex items-center justify-center gap-6 relative">
-                        <div class="relative">
-                            <!-- Animated particles -->
-                            <div class="absolute -inset-4 opacity-0 group-hover:opacity-100">
-                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle1"></div>
-                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle2" style="animation-delay: 0.1s"></div>
-                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle1" style="animation-delay: 0.2s"></div>
-                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full animate-particle2" style="animation-delay: 0.3s"></div>
-                            </div>
-                            <!-- Glowing button effect -->
-                            <div class="absolute inset-0 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-all duration-300 animate-pulse"></div>
-                            <!-- Main button -->
-                            <a href="mailto:umerchaudhary2831@gmail.com" class="group bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all duration-300 inline-flex items-center gap-2 relative hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1">
-                                <dotlottie-wc src="https://lottie.host/6417eb93-d1c9-4d2c-b692-8cb3be9f4f9e/4U637PDVXZ.lottie" background="transparent" style="width: 24px; height: 24px;" speed="1" autoplay loop></dotlottie-wc>
-                                <span class="relative z-10">Send Email</span>
-                                <!-- Click ripple effect -->
-                                <span class="absolute inset-0 rounded-full bg-white/30 opacity-0 group-hover:opacity-100 group-active:scale-90 transition-all duration-300"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <section id="bug-lab" class="section">
+      <div class="container">
+        <p class="section-kicker">Bug Lab</p>
+        <h2 class="section-title">Portfolio test environment</h2>
+        <p class="section-lead">A harmless login demo with intentional defects. Explore the form the way you would on a test assignment. Findings appear as QA-style reports. This environment does not authenticate anyone and does not send data anywhere.</p>
+        <div class="lab-layout">
+          <form id="buglab-form" class="glass lab-form" autocomplete="off">
+            <h3>Login test environment</h3>
+            <p class="section-kicker">Demo only</p>
+            <div class="field">
+              <label for="lab-email">Email</label>
+              <input id="lab-email" name="lab-email" type="text" placeholder="tester@example.com">
             </div>
+            <div class="field">
+              <label for="lab-password">Password</label>
+              <input id="lab-password" name="lab-password" type="password">
+            </div>
+            <label style="display:flex;gap:8px;align-items:center;margin-bottom:16px;color:var(--text-muted)">
+              <input id="remember-me" type="checkbox"> Remember me
+            </label>
+            <button class="btn btn-primary" type="submit">Login</button>
+            <p id="lab-result" class="form-status" role="status"></p>
+          </form>
+          <div class="glass bug-report">
+            <h3>Bug reports <span id="bug-count">0</span>/3</h3>
+            <p>Try empty passwords, invalid emails, and the remember-me control.</p>
+            <div id="bug-log" class="found-bugs" aria-live="polite"></div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary/50 border-t border-primary/10">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div class="md:col-span-2">
-                    <h4 class="text-2xl font-mono text-primary mb-4">Muhammad Umer Akram</h4>
-                    <p class="text-light/70 mb-6">Quality Assurance Engineer passionate about delivering exceptional software quality through innovative testing solutions and automation frameworks.</p>
-                    <div class="flex gap-4">
-                        <a href="https://linkedin.com/in/muhammad-umer-akram" class="text-light/70 hover:text-primary transition-colors">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="https://instagram.com/yours_umer" class="text-light/70 hover:text-primary transition-colors">
-                            <i class="fab fa-instagram text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h5 class="text-lg font-mono text-light mb-4">Quick Links</h5>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-light/70 hover:text-primary transition-colors">About</a></li>
-                        <li><a href="#projects" class="text-light/70 hover:text-primary transition-colors">Projects</a></li>
-                        <li><a href="#certifications" class="text-light/70 hover:text-primary transition-colors">Certifications</a></li>
-                        <li><a href="#contact" class="text-light/70 hover:text-primary transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-lg font-mono text-light mb-4">Services</h5>
-                    <ul class="space-y-2">
-                        <li class="text-light/70">Test Automation</li>
-                        <li class="text-light/70">API Testing</li>
-                        <li class="text-light/70">Mobile Testing</li>
-                        <li class="text-light/70">QA Consulting</li>
-                    </ul>
-                </div>
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="section-kicker">Contact</p>
+        <h2 class="section-title">Let’s talk about quality</h2>
+        <div class="contact-grid">
+          <form id="contact-form" class="glass" style="padding:28px" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name">
             </div>
-            <div class="border-t border-primary/10 mt-12 pt-8 text-center">
-                <p class="text-light/70 mb-2">&copy; 2025 Muhammad Umer Akram. All rights reserved.</p>
-                <p class="text-light/50 text-sm">Made with passion for quality in Pakistan</p>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
             </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-primary" id="form-submit" type="submit">Send message</button>
+            <p id="form-status" class="form-status" role="status"></p>
+          </form>
+          <aside class="glass" style="padding:28px">
+            <h3>Direct channels</h3>
+            <p><a href="mailto:umerchaudhary2831@gmail.com">umerchaudhary2831@gmail.com</a></p>
+            <p><a href="tel:+923087397486">+92 308 7397486</a></p>
+            <p><a href="https://linkedin.com/in/muhammad-umer-akram" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p><a href="https://github.com/muhamadumerakram" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            <p>Lahore, Punjab, Pakistan</p>
+          </aside>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Sample Code Modal -->
-    <div id="sample-code-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-dark/95 border border-primary/20 rounded-xl max-w-7xl w-full h-[75vh] flex flex-col overflow-hidden">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-6 border-b border-primary/10">
-                <h3 class="text-2xl font-mono text-primary">Sample Automation Code</h3>
-                <button id="close-modal" class="text-light/70 hover:text-primary transition-colors text-2xl">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <!-- Modal Content: Stacked Layout -->
-            <div class="p-6 space-y-8 flex-1 overflow-y-auto">
-                <!-- Sample Function -->
-                <div>
-                    <h4 class="text-xl font-mono text-primary mb-4 flex items-center gap-2">
-                        <i class="fas fa-function text-primary"></i>
-                        Sample Function
-                    </h4>
-                    <div class="bg-dark/80 rounded-lg border border-primary/10 text-xs md:text-sm" style="height: 300px; overflow: hidden;">
-                        <pre style="height: 100%; overflow: scroll; padding: 1rem; margin: 0; scrollbar-width: thin; scrollbar-color: #0891b2 #1e293b;"><code class="language-javascript">export const generateRandomString = (length = 11) => {
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Muhammad Umer Akram</strong>
+        <p>Quality Assurance Engineer focused on reliable software through thoughtful testing and automation.</p>
+      </div>
+      <div>
+        <a href="https://instagram.com/yours_umer" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+      <p>© 2026 Muhammad Umer Akram. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="sample-code-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="glass modal-card">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center">
+        <h3 id="modal-title">Sample automation code</h3>
+        <button id="close-modal" class="btn btn-ghost" type="button">Close</button>
+      </div>
+      <h4>Helper</h4>
+      <pre><code>export const generateRandomString = (length = 11) => {
   const randomNumber = Math.random()
   const randomString = randomNumber.toString(36).substring(2)
- 
-  if (randomString.length < length) {
+
+  if (randomString.length &lt; length) {
     return randomString.padEnd(length, '0')
   }
   return randomString.slice(0, length)
-}
-</code></pre>
-                    </div>
-                </div>
+}</code></pre>
+      <h4>Page object</h4>
+      <pre><code>import { interceptGqlRequest, generateRandomString} from "../../utils/helpers"
 
-                <!-- Test Case Function -->
-                <div>
-                    <h4 class="text-xl font-mono text-primary mb-4 flex items-center gap-2">
-                        <i class="fas fa-vial text-primary"></i>
-                        Test Case Function
-                    </h4>
-                    <div class="bg-dark/80 rounded-lg border border-primary/10 text-xs md:text-sm" style="height: 300px; overflow: hidden;">
-                        <pre style="height: 100%; overflow: scroll; padding: 1rem; margin: 0; scrollbar-width: thin; scrollbar-color: #0891b2 #1e293b;"><code class="language-javascript">import { interceptGqlRequest, generateRandomString} from "../../utils/helpers"
-
-// ApiKey class for API key management test cases
 class ApiKey {
   constructor() {
     this.verifyAPIRoute()
   }
-  // Navigates to the API Keys settings page
   verifyAPIRoute(){
     cy.visit('/sites')
     cy.get("[data-attribute='dropdown-user-profile']").click()
     cy.get("[data-attribute='dropdown-item-user-account']").click()
     cy.get("[data-attribute='setting-card-api-keys']").click()
   }
-
-  // Generates a new API key and verifies the process
   verifyGenerateApi(){
     interceptGqlRequest({ alias: 'generateApiKey' })
-    cy.get("[data-attribute='button-generate-api-key']").click() // click on generate api button
-    cy.get("[data-attribute='input-api-name']").type(generateRandomString()) // type api key name
-    cy.get("[data-attribute= 'button-modal-save-api-key']").click() // click on save button
+    cy.get("[data-attribute='button-generate-api-key']").click()
+    cy.get("[data-attribute='input-api-name']").type(generateRandomString())
+    cy.get("[data-attribute= 'button-modal-save-api-key']").click()
     cy.wait('@generateApiKey')
-  }
-
-  // Deletes an API key and verifies the process
-  verifyDeleteApi(){
-    interceptGqlRequest({ alias: 'deleteApiKey' })
-    cy.get("[data-attribute='dropdown-menu-button']").first().click()
-    cy.get("[data-attribute='dropdown-item-api-delete']").click({ waitForAnimations: true})
-    cy.get("[data-attribute='button-delete-api-key']").click()
-    cy.wait('@deleteApiKey')
-  }
-
-  // Deactivates an API key and verifies the process
-  verifyDeactivateApi(){
-    interceptGqlRequest({ alias: 'updateApiKey' })
-    cy.get("[data-attribute='dropdown-menu-button']").first().click()
-    cy.get("[data-attribute='dropdown-item-api-deactivate']").click()
-    cy.wait('@updateApiKey')    
-  }
-
-  // Activates an API key and verifies the process
-  verifyActivateApi(){
-    interceptGqlRequest({ alias: 'updateApiKey' })
-    cy.get("[data-attribute='dropdown-menu-button']").first().click()
-    cy.get("[data-attribute='dropdown-item-api-deactivate']").click()
-    cy.wait('@updateApiKey')
   }
 }
 export default ApiKey</code></pre>
-                    </div>
-                </div>
+      <h4>Test execution</h4>
+      <pre><code>import ApiKey from "../../pages/Account/ApiKey"
 
-                <!-- Test Execution -->
-                <div>
-                    <h4 class="text-xl font-mono text-primary mb-4 flex items-center gap-2">
-                        <i class="fas fa-play text-primary"></i>
-                        Test Execution
-                    </h4>
-                    <div class="bg-dark/80 rounded-lg border border-primary/10 text-xs md:text-sm" style="height: 300px; overflow: hidden;">
-                        <pre style="height: 100%; overflow: scroll; padding: 1rem; margin: 0; scrollbar-width: thin; scrollbar-color: #0891b2 #1e293b;"><code class="language-javascript">import ApiKey from "../../pages/Account/ApiKey"
-
-context('Cypress Mailmunch -Account  Settings Page Tests', () => {
+context('Cypress Mailmunch - Account Settings Page Tests', () => {
   beforeEach(() => {
     cy.login()
     cy.visitPartnerSite();
   })
 
-  it('Verify API key Route ', () => {
+  it('Verify API key Route', () => {
     const ApiKeyTest = new ApiKey()
     ApiKeyTest.verifyAPIRoute()
-} )
-
-  it('generate Api key ', () => {
-      const ApiKeyTest = new ApiKey()
-      ApiKeyTest.verifyGenerateApi()
-  } )
-
-  it('deactivate Api key', ()=>{
-    const ApiKeyTest = new ApiKey()
-    ApiKeyTest.verifyDeactivateApi()
-  } )
- 
-  it('activate Api key', ()=>{
-    const ApiKeyTest = new ApiKey()
-    ApiKeyTest.verifyActivateApi()
-  } )
- 
-  it('Delete Api key  ', () => {
-      const ApiKeyTest = new ApiKey()
-      ApiKeyTest.verifyDeleteApi()
-  } )
-     
- 
+  })
 })</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+  </div>
 
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
