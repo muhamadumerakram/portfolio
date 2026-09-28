@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Muhammad Umer Akram's Portfolio",
   "scripts": {
-    "start": "npx --yes serve -l 5173",
-    "dev": "npx --yes serve -l 5173"
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
